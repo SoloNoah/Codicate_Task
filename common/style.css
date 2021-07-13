@@ -88,7 +88,7 @@ Scroll up back to the default position.
 .sub-nav {
   margin: 0 auto;
   padding-top: 1em;
-  min-height: 5vh;
+  min-height: 3vh;
   border-bottom: 1px solid gray;
   width: 100%;
 }
@@ -96,6 +96,12 @@ Scroll up back to the default position.
 .middle {
   text-align: center;
   list-style-type: none;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  background: #f2f2f2;
+  width: 100%;
 }
 /*  
  FIX THIS!
