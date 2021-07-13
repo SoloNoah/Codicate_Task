@@ -1,0 +1,170 @@
+body,
+html {
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+* {
+  color: black;
+}
+
+/* Main navbar */
+
+/*
+Add menu responsiveness
+*/
+.main-nav {
+  min-height: 7vh;
+}
+.logo {
+  float: left;
+}
+.nav-right {
+  float: right;
+  list-style-type: none;
+}
+
+* > li {
+  text-align: center;
+  padding: 16px;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: blueviolet;
+}
+
+.nav-right li:last-child a {
+  background-color: blueviolet;
+  display: inline-block;
+  padding: 3px 5px;
+  color: white;
+  border-radius: 4px;
+}
+
+.nav-right li:last-child a:hover {
+  transform: scale(1.1);
+}
+
+/* Sub nav */
+/*
+Sub nav should be fixed on the top of the screen on scroll down.
+Scroll up back to the default position.
+*/
+.sub-nav {
+  margin: 0 auto;
+  min-height: 5vh;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+.middle {
+  text-align: center;
+  list-style-type: none;
+}
+/*  
+ FIX THIS!
+ This isn't optimal. There is a slight gap between the border of the button to the border of the nav. 
+ And also, the hovering on the li doesn't color the a.
+ 
+ */
+.middle li:hover {
+  border-bottom: 2px solid blueviolet;
+  color: blueviolet;
+}
+
+/*     Header     */
+header {
+  border-bottom: 1px solid gray;
+  background-image: url("/assets/images/Header_BG.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  width: 100%;
+  padding-bottom: 3em;
+}
+.header-text-intro {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 4em;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5%;
+}
+.header-content-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 20%;
+}
+.icon {
+  width: 30px;
+}
+
+/* First section */
+.first-section {
+  min-height: fit-content;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.first-section-intro {
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 4em;
+}
+
+.table {
+  /* background-image: url("/assets/images/tableBG.png"); */
+  margin: 0 auto;
+  margin-bottom: 5em;
+}
+.table-icon {
+  width: 20px;
+}
+
+/* Second section */
+
+.second-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #bd00fd, #9800fd);
+  padding: 5em 0;
+}
+.second-content-holder {
+  width: 50%;
+}
+.second-content-holder > *,
+.second-content-holder p {
+  color: white;
+}
+.second-sec-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5%;
+}
+
+.second-sec-flex p {
+  flex: 2;
+}
+.second-sec-btn {
+  vertical-align: middle;
+  background-color: white;
+  color: #9800fd;
+}
