@@ -1,32 +1,53 @@
 @font-face {
-  font-family: "Bd";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Bd.otf");
+  font-family: 'Bd';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Bd.otf');
 }
 @font-face {
-  font-family: "Md";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Md.otf");
-}
-
-@font-face {
-  font-family: "MdCn";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-MdCn.otf");
+  font-family: 'Md';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Md.otf');
 }
 
 @font-face {
-  font-family: "Roman";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Roman.otf");
+  font-family: 'MdCn';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-MdCn.otf');
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Roman.otf');
 }
 
 body,
 html {
   background-color: #f2f2f2;
   margin: 0 auto;
-  min-height: 100vh;
-  font-family: "Roman", sans-serif;
+  /* min-height: 100vh; */
+  font-family: 'Roman', sans-serif;
+  /* font-size: 1em; */
 }
 
 * {
-  color: black;
+  color: var(--default);
+}
+
+:root {
+  --accent: #920dfb;
+  --light-accent: #bd00fd;
+  --default: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Md';
+  color: var(--accent);
+}
+
+p {
+  font-family: 'Roman';
+  line-height: 1.5em;
 }
 
 header,
@@ -35,6 +56,7 @@ footer {
   padding-top: 3em;
   padding-bottom: 5em;
 }
+
 /* Main navbar */
 
 /*
@@ -42,6 +64,9 @@ Add menu responsiveness
 */
 .main-nav {
   min-height: 7vh;
+  padding-top: 1em;
+  font-family: 'Bd';
+  font-size: 0.8em;
 }
 .logo {
   float: left;
@@ -54,7 +79,7 @@ Add menu responsiveness
 .nav-right > li,
 .middle > li {
   text-align: center;
-  padding: 16px;
+  padding: 2.2em;
   display: inline;
 }
 
@@ -64,15 +89,16 @@ a {
 }
 
 a:hover {
-  color: blueviolet;
+  color: var(--accent);
 }
 
 .btn {
   padding: 0.7em 1.7em;
   border-radius: 0.2em;
 }
+
 .nav-btn {
-  background-color: blueviolet;
+  background-color: var(--accent);
   color: white;
 }
 .nav-btn:hover {
@@ -84,11 +110,13 @@ a:hover {
 /*
 Sub nav should be fixed on the top of the screen on scroll down.
 Scroll up back to the default position.
+sub nav and middle aren't the same height. i should definetly fix this
+the heights should match. atm they aren't
 */
 .sub-nav {
   margin: 0 auto;
-  padding-top: 1em;
-  min-height: 5vh;
+  /* padding-top: 1em; */
+  min-height: 4vh;
   border-bottom: 1px solid gray;
   width: 100%;
 }
@@ -97,6 +125,10 @@ Scroll up back to the default position.
   text-align: center;
   list-style-type: none;
 }
+
+.sub-nav-text {
+  color: #7f8183;
+}
 /*  
  FIX THIS!
  This isn't optimal. There is a slight gap between the border of the button to the border of the nav. 
@@ -104,14 +136,14 @@ Scroll up back to the default position.
  
  */
 .middle li:hover {
-  border-bottom: 2px solid blueviolet;
-  color: blueviolet;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
 }
 
 /*     Header     */
 header {
   border-bottom: 1px solid gray;
-  background-image: url("/assets/images/Header_BG.png");
+  background-image: url('/assets/images/Header_BG.png');
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center center;
@@ -122,6 +154,14 @@ header {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 4em;
+}
+.header-text-intro p {
+  font-family: 'Roman';
+}
+
+.header-text-intro h1 {
+  font-size: 3em;
+  font-family: 'Bd';
 }
 
 .header-content {
@@ -138,8 +178,11 @@ header {
   text-align: center;
   width: 20%;
 }
+.header-content-column h3 {
+  color: var(--default);
+}
 .icon {
-  width: 30px;
+  width: 50px;
 }
 
 /* First section */
@@ -161,6 +204,10 @@ header {
   
   */
 
+.table-container h1 {
+  color: var(--default);
+  font-size: 2em;
+}
 .table {
   /* background-image: url("/assets/images/tableBG.png"); */
   margin: 0 auto;
@@ -173,7 +220,13 @@ th,
 td {
   border-bottom: 1px solid #ddd;
 }
-
+tr:first-child td:nth-child(2) {
+  color: var(--accent);
+}
+td:first-child,
+tr:first-child {
+  font-family: 'Bd';
+}
 tr:last-of-type {
   border: 0;
 }
@@ -195,10 +248,19 @@ td:nth-child(n + 2) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #bd00fd, #9800fd);
+  /* Wasn't really sure how the gradient was done here.
+  I tried linear and radial as well but couldn't get it right. The colors were confusing. */
+  /* background: linear-gradient(135deg, var(--light-accent), var(--accent) 70%); */
+  background: radial-gradient(circle at top right, var(--accent), var(--light-accent));
 }
 .second-content-holder {
-  width: 55%;
+  padding: 0 50px;
+  width: 50%;
+}
+.second-content-holder h1 {
+  font-size: 2.7em;
+  font-family: 'Bd';
+  margin-bottom: 0;
 }
 .second-content-holder > *,
 .second-content-holder p {
@@ -214,9 +276,10 @@ td:nth-child(n + 2) {
 
 .second-sec-flex p {
   flex: 2;
+  font-family: 'Bd';
 }
 .second-sec-btn {
-  color: blueviolet;
+  color: var(--accent);
   background-color: white;
   border-radius: 0.2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -226,7 +289,7 @@ td:nth-child(n + 2) {
 /*  The height of this button isn't properly set. */
 
 .second-sec-btn:hover {
-  color: blueviolet;
+  color: var(--accent);
 }
 
 /* Third sec  */
@@ -238,13 +301,22 @@ td:nth-child(n + 2) {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10%;
+  gap: 15%;
 }
 
 .third-sec-content {
-  width: 30%;
+  width: 25%;
 }
 
+.third-sec-content h1 {
+  font-size: 2.7em;
+  font-family: 'Bd';
+  margin-bottom: 0;
+}
+
+.third-sec-content h2 {
+  color: var(--default);
+}
 .third-sec-img-container {
   width: 200px;
   height: 200px;
@@ -280,7 +352,7 @@ footer {
 }
 
 .footer-item-title {
-  color: purple;
+  color: var(--accent);
 }
 @media screen and (max-width: 800px) {
   .footer-list {
