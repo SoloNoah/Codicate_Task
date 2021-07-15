@@ -224,9 +224,8 @@ header {
   border-collapse: separate;
   overflow: hidden;
   border-spacing: 0;
-  /* Not sure about the width here. Leave it here for now*/
-
-  width: 70%;
+  /* Not sure about the width here. Leave it here for now and check on the larger screen*/
+  width: 50%;
   padding: 5px 0;
 }
 
