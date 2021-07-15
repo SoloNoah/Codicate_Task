@@ -211,11 +211,6 @@ header {
   margin-bottom: 4em;
 }
 
-/* Need to add image and figure out how is should look 
-    Table styling is strange. Not sure how to do it.
-  
-  */
-
 .table-container h1 {
   color: var(--default);
   font-size: 2em;
@@ -229,18 +224,22 @@ header {
   border-collapse: separate;
   overflow: hidden;
   border-spacing: 0;
-  width: 70%;
   /* Not sure about the width here. Leave it here for now*/
+
+  width: 70%;
   padding: 5px 0;
 }
 
 td {
   padding: 1em 2em;
   width: 200px;
-  border: 0.5px solid var(--gray);
+  border: 0.5px solid #dcd8e8;
 }
 tr:first-child td {
   border-bottom: hidden;
+}
+tr td:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 tr:nth-child(2) td {
   border-top: hidden;
@@ -270,13 +269,16 @@ tr td:last-child {
 tr:first-child td:nth-child(2) {
   border-top-left-radius: 1em;
   color: var(--accent);
-  box-shadow: -3px -3px 1px gray;
+  box-shadow: -1px -1px 1px gray;
 }
 tr td:nth-child(2) {
-  box-shadow: -3px 0px 1px gray;
+  box-shadow: -1px 0px 1px gray;
+  border-right: hidden;
+  border-bottom: hidden;
 }
+
 tr:last-child td:nth-child(2) {
-  box-shadow: -3px 3px 1px gray;
+  box-shadow: -1px 3px 1px gray;
 }
 tr:first-child td:last-child {
   border-top-right-radius: 1em;
