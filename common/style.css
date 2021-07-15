@@ -231,14 +231,23 @@ header {
   border-spacing: 0;
   width: 70%;
   /* Not sure about the width here. Leave it here for now*/
+  padding: 5px 0;
 }
 
 td {
   padding: 1em 2em;
   width: 200px;
-  border: 1px solid var(--gray);
+  border: 0.5px solid var(--gray);
 }
-
+tr:first-child td {
+  border-bottom: hidden;
+}
+tr:nth-child(2) td {
+  border-top: hidden;
+}
+tr td:last-child {
+  border-left: hidden;
+}
 tr:first-child td:first-child {
   border: hidden;
 }
@@ -254,9 +263,20 @@ tr td:first-child {
   border-top: hidden;
 }
 
+tr td:last-child {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 tr:first-child td:nth-child(2) {
   border-top-left-radius: 1em;
   color: var(--accent);
+  box-shadow: -3px -3px 1px gray;
+}
+tr td:nth-child(2) {
+  box-shadow: -3px 0px 1px gray;
+}
+tr:last-child td:nth-child(2) {
+  box-shadow: -3px 3px 1px gray;
 }
 tr:first-child td:last-child {
   border-top-right-radius: 1em;
