@@ -27,9 +27,7 @@ body,
 html {
   background-color: var(--default-white);
   margin: 0 auto;
-  /* min-height: 100vh; */
   font-family: "Roman", sans-serif;
-  /* font-size: 1em; */
 }
 
 * {
@@ -59,25 +57,32 @@ footer {
 
 /* Main navbar */
 
-/*
-Add menu responsiveness
-*/
 .navs-holder {
   position: fixed;
   width: 100%;
-}
-nav {
+  z-index: 1;
+  overflow: hidden;
   background-color: #ebecee;
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
+
 .main-nav {
-  min-height: 7vh;
+  min-height: 3vh;
   padding-top: 1em;
   font-family: "Bd";
   font-size: 0.8em;
-  padding-bottom: 0px;
+  padding-bottom: 2em;
+  position: relative;
 }
 .logo {
-  float: left;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -35%);
+  font-family: "Bd";
+  font-size: 1.5em;
 }
 .nav-right {
   float: right;
@@ -104,50 +109,45 @@ a:hover {
   padding: 0.7em 1.7em;
   border-radius: 0.2em;
 }
+.btn:hover {
+  background-color: var(--light-accent);
+  color: var(--default-white);
+}
 
 .nav-btn {
   background-color: var(--accent);
   color: white;
 }
-.nav-btn:hover {
-  transform: scale(1.1);
-  color: white;
-}
 
 /* Sub nav */
-/*
-Sub nav should be fixed on the top of the screen on scroll down.
-Scroll up back to the default position.
-sub nav and middle aren't the same height. i should definetly fix this
-the heights should match. atm they aren't
-*/
+
 .sub-nav {
   margin: 0 auto;
-  padding-top: 1em;
-  /* position: fixed; */
-
-  /* min-height: 4vh; */
-  border-bottom: 1px solid var(--gray);
   width: 100%;
 }
 
 .middle {
   text-align: center;
+  padding: 1em;
+}
 
-  list-style-type: none;
+.sub-nav > .middle {
+  margin: 0;
+}
+.middle li {
+  padding-top: 0;
+  padding-bottom: 1em;
 }
 
 .sub-nav-text {
   color: #7f8183;
 }
-/*  
- FIX THIS!
- This isn't optimal. There is a slight gap between the border of the button to the border of the nav. 
- And also, the hovering on the li doesn't color the a.
- 
- */
+
 .middle li:hover {
   border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+}
+.middle li:hover a {
   color: var(--accent);
 }
 
@@ -158,8 +158,10 @@ header {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center center;
+  padding-top: 15vh;
   width: 100%;
 }
+
 .header-text-intro {
   margin: 0 auto;
   text-align: center;
@@ -219,31 +221,57 @@ header {
   font-size: 2em;
 }
 .table {
-  /* background-image: url("/assets/images/tableBG.png"); */
   margin: 0 auto;
-  /* margin-bottom: 5em; */
-  padding: 0.5em 1.5em;
+  background-image: url("/assets/images/tableBG.png");
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: start;
+  border-collapse: separate;
+  overflow: hidden;
+  border-spacing: 0;
+  width: 70%;
+  /* Not sure about the width here. Leave it here for now*/
 }
 
-th,
 td {
-  border-bottom: 1px solid #ddd;
+  padding: 1em 2em;
+  width: 200px;
+  border: 1px solid var(--gray);
 }
+
+tr:first-child td:first-child {
+  border: hidden;
+}
+
+tr:last-child td:first-child {
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: hidden;
+}
+tr td:first-child {
+  border-left: hidden;
+  border-right: hidden;
+  border-top: hidden;
+}
+
 tr:first-child td:nth-child(2) {
+  border-top-left-radius: 1em;
   color: var(--accent);
+}
+tr:first-child td:last-child {
+  border-top-right-radius: 1em;
+}
+tr:last-child td:nth-child(2) {
+  border-bottom-left-radius: 1em;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 1em;
 }
 td:first-child,
 tr:first-child {
   font-family: "Bd";
 }
-tr:last-of-type {
-  border: 0;
-}
 
-tr:nth-child(n + 2) {
-  border: 1px solid var(--gray);
-}
 td:nth-child(n + 2) {
   text-align: center;
 }
@@ -303,7 +331,9 @@ td:nth-child(n + 2) {
 /*  The height of this button isn't properly set. */
 
 .second-sec-btn:hover {
+  background-color: white;
   color: var(--accent);
+  transform: scale(1.1);
 }
 
 /* Third sec  */
