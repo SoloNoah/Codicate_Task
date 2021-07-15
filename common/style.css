@@ -439,27 +439,48 @@ footer {
   color: var(--gray);
   font-size: 0.7em;
 }
+
 @media screen and (max-width: 800px) {
-  .footer-list {
+  .footer-list,
+  .header-content,
+  .second-sec-flex,
+  .third-sec-flex {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
+  h1 {
+    text-align: center;
+  }
+
   .footer-item {
     width: 40%;
   }
+  .feature {
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 30px;
+  }
 }
 
-/*   Nav bar sticky */
+/*   Nav bar fixed */
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
-
-/* .active {
-  display: block;
-} */
 
 .hidden {
   display: none;
