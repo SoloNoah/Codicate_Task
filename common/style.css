@@ -62,11 +62,19 @@ footer {
 /*
 Add menu responsiveness
 */
+.navs-holder {
+  position: fixed;
+  width: 100%;
+}
+nav {
+  background-color: #ebecee;
+}
 .main-nav {
   min-height: 7vh;
   padding-top: 1em;
   font-family: "Bd";
   font-size: 0.8em;
+  padding-bottom: 0px;
 }
 .logo {
   float: left;
@@ -115,14 +123,17 @@ the heights should match. atm they aren't
 */
 .sub-nav {
   margin: 0 auto;
-  /* padding-top: 1em; */
-  min-height: 4vh;
+  padding-top: 1em;
+  /* position: fixed; */
+
+  /* min-height: 4vh; */
   border-bottom: 1px solid var(--gray);
   width: 100%;
 }
 
 .middle {
   text-align: center;
+
   list-style-type: none;
 }
 
@@ -148,7 +159,6 @@ header {
   background-size: auto;
   background-position: center center;
   width: 100%;
-  /* padding-bottom: 3em; */
 }
 .header-text-intro {
   margin: 0 auto;
@@ -387,4 +397,19 @@ footer {
   .footer-item {
     width: 40%;
   }
+}
+
+/*   Nav bar sticky */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* .active {
+  display: block;
+} */
+
+.hidden {
+  display: none;
 }
