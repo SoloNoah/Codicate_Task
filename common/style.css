@@ -1,20 +1,20 @@
 @font-face {
-  font-family: "Bd";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Bd.otf");
+  font-family: 'Bd';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Bd.otf');
 }
 @font-face {
-  font-family: "Md";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Md.otf");
-}
-
-@font-face {
-  font-family: "MdCn";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-MdCn.otf");
+  font-family: 'Md';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Md.otf');
 }
 
 @font-face {
-  font-family: "Roman";
-  src: url("/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Roman.otf");
+  font-family: 'MdCn';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-MdCn.otf');
+}
+
+@font-face {
+  font-family: 'Roman';
+  src: url('/assets/fonts/Linotype\ -\ HelveticaNeueLTPro-Roman.otf');
 }
 :root {
   --accent: #920dfb;
@@ -27,7 +27,8 @@ body,
 html {
   background-color: var(--default-white);
   margin: 0 auto;
-  font-family: "Roman", sans-serif;
+  font-family: 'Roman', sans-serif;
+  overflow-x: hidden;
 }
 
 * {
@@ -39,12 +40,12 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Md";
+  font-family: 'Md';
   color: var(--accent);
 }
 
 p {
-  font-family: "Roman";
+  font-family: 'Roman';
   line-height: 1.5em;
 }
 
@@ -58,20 +59,24 @@ footer {
 /* Main navbar */
 
 .navs-holder {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   z-index: 1;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #ebecee;
   -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
 }
+.hidden {
+  display: none;
+}
 
 .main-nav {
   min-height: 3vh;
   padding-top: 1em;
-  font-family: "Bd";
+  font-family: 'Bd';
   font-size: 0.8em;
   padding-bottom: 2em;
   position: relative;
@@ -81,7 +86,7 @@ footer {
   top: 50%;
   left: 15%;
   transform: translate(-50%, -35%);
-  font-family: "Bd";
+  font-family: 'Bd';
   font-size: 1.5em;
 }
 .nav-right {
@@ -119,6 +124,20 @@ a:hover {
   color: white;
 }
 
+.burger {
+  display: none;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 35px;
+  height: 3px;
+  margin: 7px;
+  background-color: var(--accent);
+  transition: all 0.3s ease;
+}
+
 /* Sub nav */
 
 .sub-nav {
@@ -154,12 +173,12 @@ a:hover {
 /*     Header     */
 header {
   border-bottom: 1px solid var(--gray);
-  background-image: url("/assets/images/Header_BG.png");
+  background-image: url('/assets/images/Header_BG.png');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center center;
-  padding-top: 15vh;
   width: 100%;
+  height: auto;
 }
 
 .header-text-intro {
@@ -168,12 +187,12 @@ header {
   margin-bottom: 4em;
 }
 .header-text-intro p {
-  font-family: "Roman";
+  font-family: 'Roman';
 }
 
 .header-text-intro h1 {
   font-size: 3em;
-  font-family: "Bd";
+  font-family: 'Bd';
 }
 
 .header-content {
@@ -217,14 +236,14 @@ header {
 }
 .table {
   margin: 0 auto;
-  background-image: url("/assets/images/tableBG.png");
+  background-image: url('/assets/images/tableBG.png');
   background-repeat: no-repeat;
   background-position: center;
   text-align: start;
   border-collapse: separate;
   overflow: hidden;
   border-spacing: 0;
-  /* Not sure about the width here. Leave it here for now and check on the larger screen*/
+
   width: 50%;
   padding: 5px 0;
 }
@@ -237,9 +256,7 @@ td {
 tr:first-child td {
   border-bottom: hidden;
 }
-tr td:nth-child(2) {
-  background-color: rgba(255, 255, 255, 0.5);
-}
+
 tr:nth-child(2) td {
   border-top: hidden;
 }
@@ -261,8 +278,11 @@ tr td:first-child {
   border-top: hidden;
 }
 
+tr td:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 tr td:last-child {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 tr:first-child td:nth-child(2) {
@@ -290,7 +310,7 @@ tr:last-child td:last-child {
 }
 td:first-child,
 tr:first-child {
-  font-family: "Bd";
+  font-family: 'Bd';
 }
 
 td:nth-child(n + 2) {
@@ -310,11 +330,7 @@ td:nth-child(n + 2) {
   /* Wasn't really sure how the gradient was done here.
   I tried linear and radial as well but couldn't get it right. The colors were confusing. */
   /* background: linear-gradient(135deg, var(--light-accent), var(--accent) 70%); */
-  background: radial-gradient(
-    circle at top right,
-    var(--accent),
-    var(--light-accent)
-  );
+  background: radial-gradient(circle at top right, var(--accent), var(--light-accent));
 }
 .second-content-holder {
   padding: 0 50px;
@@ -322,7 +338,7 @@ td:nth-child(n + 2) {
 }
 .second-content-holder h1 {
   font-size: 2.7em;
-  font-family: "Bd";
+  font-family: 'Bd';
   margin-bottom: 0;
 }
 .second-content-holder > *,
@@ -339,7 +355,7 @@ td:nth-child(n + 2) {
 
 .second-sec-flex p {
   flex: 2;
-  font-family: "Bd";
+  font-family: 'Bd';
 }
 .second-sec-btn {
   color: var(--accent);
@@ -375,7 +391,7 @@ td:nth-child(n + 2) {
 
 .third-sec-content h1 {
   font-size: 2.7em;
-  font-family: "Bd";
+  font-family: 'Bd';
   margin-bottom: 0;
 }
 
@@ -435,9 +451,19 @@ footer {
   position: absolute;
   bottom: 0;
   left: 12%;
-  font-family: "Bd";
+  font-family: 'Bd';
   color: var(--gray);
   font-size: 0.7em;
+}
+.contact-icons-container {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.contact-icon {
+  height: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
@@ -450,6 +476,7 @@ footer {
     align-items: center;
     text-align: center;
   }
+
   h1 {
     text-align: center;
   }
@@ -473,15 +500,56 @@ footer {
     display: block;
     margin-bottom: 30px;
   }
+
+  body {
+    overflow-x: hidden;
+  }
 }
 
-/*   Nav bar fixed */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+@media screen and (max-width: 1100px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-right {
+    position: absolute;
+    right: 0px;
+    height: 100vh;
+    top: 8vh;
+    background-color: #ebecee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+    border-top: 1px solid var(--accent);
+  }
+
+  .burger {
+    display: block;
+    float: right;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  .middle {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-icons-container {
+    gap: 1px;
+  }
 }
 
-.hidden {
-  display: none;
+/*  Burger animation */
+.toggle .line-1 {
+  transform: rotate(-45deg) translate(-5px, 9px);
+}
+.toggle .line-2 {
+  opacity: 0;
+}
+.toggle .line-3 {
+  transform: rotate(45deg) translate(-5px, -9px);
 }
