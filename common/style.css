@@ -28,7 +28,6 @@ html {
   background-color: var(--default-white);
   margin: 0 auto;
   font-family: 'Roman', sans-serif;
-  overflow-x: hidden;
 }
 
 * {
@@ -59,11 +58,11 @@ footer {
 /* Main navbar */
 
 .navs-holder {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1;
-  /* overflow: hidden; */
   background-color: #ebecee;
   -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
@@ -505,9 +504,6 @@ footer {
 }
 
 @media screen and (max-width: 1100px) {
-  body {
-    overflow-x: hidden;
-  }
   .nav-right {
     position: absolute;
     right: 0px;
