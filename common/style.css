@@ -365,8 +365,6 @@ td:nth-child(n + 2) {
   height: 60%;
 }
 
-/*  The height of this button isn't properly set. */
-
 .second-sec-btn:hover {
   background-color: white;
   color: var(--accent);
