@@ -539,6 +539,9 @@ footer {
   .contact-icons-container {
     gap: 1px;
   }
+  .third-sec-content {
+    width: 70%;
+  }
 }
 
 /*  Burger animation */
